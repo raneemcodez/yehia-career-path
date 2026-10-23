@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import Navbar from "./components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +25,63 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-screen flex-col">
+      <Navbar />
+    
+        {children}
+
+        <footer className="mt-auto border-t border-stone-200 bg-stone-50">
+  <div className="mx-auto max-w-6xl px-6 py-10">
+
+    <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+
+      <div className="max-w-sm">
+        <Link
+          href="/"
+          className="text-2xl font-bold tracking-tight text-neutral-900"
+        >
+          pathway<span className="text-[#74836A]">.</span>
+        </Link>
+
+        <p className="mt-3 text-sm leading-6 text-neutral-600">
+          A clearer path to your next career opportunity.
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-3">
+        <h3 className="text-sm font-semibold text-neutral-900">
+          Explore
+        </h3>
+
+        <Link href="/" className="text-sm text-neutral-600 hover:text-[#74836A]">
+          Home
+        </Link>
+
+        <Link href="/plan" className="text-sm text-neutral-600 hover:text-[#74836A]">
+          Plan
+        </Link>
+
+        <Link href="/opportunities" className="text-sm text-neutral-600 hover:text-[#74836A]">
+          Opportunities
+        </Link>
+
+        <Link href="/dashboard" className="text-sm text-neutral-600 hover:text-[#74836A]">
+          Dashboard
+        </Link>
+      </div>
+
+    </div>
+
+    <div className="mt-8 border-t border-stone-200 pt-5">
+      <p className="text-xs text-neutral-500">
+        © 2026 Pathway. Built for the next step.
+      </p>
+    </div>
+
+  </div>
+</footer>
+      
+      </body>
     </html>
   );
 }

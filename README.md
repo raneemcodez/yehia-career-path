@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Pathway
 
-First, run the development server:
+**Created by:** Raneem Alrefaie
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Pathway is a simple job-search website built with Next.js, React, TypeScript, and Tailwind CSS. It helps Yehia organize his job search by viewing opportunities, following a job-search plan, and tracking sample job applications through a dashboard.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Run Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone the repository:
 
-## Learn More
+   ```bash
+   git clone https://github.com/raneemcodez/yehia-career-path.git
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Open the project folder:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   cd yehia-career-path
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Install the dependencies:
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Start the development server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Explain Your Choices
+
+### 1. Why did you use `await` when reading `params`?
+
+In Next.js, `params` is asynchronous in my dynamic route, so I used `await` to get the route parameters before using them. I then used the ID to find the matching opportunity in my sample data.
+
+### 2. Why is the route ID a string?
+
+The route ID is a string because dynamic route parameters are received as strings in Next.js. My opportunity IDs are also strings, so I can compare them directly to find the correct opportunity.
+
+### 3. What belongs in the dashboard layout, and what belongs in each dashboard page?
+
+The dashboard layout contains shared elements, such as the navigation links for Overview and Applications. The dashboard pages contain their own content: the overview shows the total number of applications, while the applications page displays each application with its title, company, and status.
